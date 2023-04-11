@@ -6,7 +6,7 @@
 
 ## Summary
 
-TypeScript is based on [structural subtyping][type-compatibility], but [nominal types][nominal-typing] are useful for expressing distinct concepts. Composing interfaces is a proven strategy. *Therefore...* Compose tags by constraint instead of defining a single tag per nominal concept.
+TypeScript is based on [structural subtyping][type-compatibility], but [nominal types][nominal-typing] are useful for expressing distinct concepts. Composing interfaces is a proven strategy. *Therefore...* Make use of structural subtyping by **composing tags by constraint instead of defining a single nominal tag per concept**.
 
 ```ts
 type Temperature = number & Unit<'celsius'>
@@ -34,7 +34,7 @@ Generally, **concepts are context-specific** — **constraints are universal**.
 
 ### Constructing a constrained literal
 
-It's necessary to parse input at the system boundary (e.g. public API). The boundary is a great place for introducing constructors for your local concepts. The goal is to **attach the constraints that your concept conforms to as type-level tags**.
+It's necessary to parse input at the system boundary (e.g. public API). The boundary is a great place for introducing constructors for your local concepts. What matters is ending up with *the proper type signature with the least overhead*.
 
 - Given a concept...
     ```ts
@@ -61,9 +61,9 @@ It's necessary to parse input at the system boundary (e.g. public API). The boun
 
 ### Accepting a constrained literal as input
 
-The advantage of constraints as types is evident when defining context-independent functions. **Making constraints explicit on the type-level** avoids a situation where you have to choose to either...
+Constraints as types aims to make it easier to define functions that are compatible with concepts from external contexts. Making constraints explicit on the type-level *avoids* a situation where you have to choose to either...
 
-- support the base literal (e.g. `number`) via defensive programming, or to
+- fall back to the base literal (e.g. `number`) via defensive programming, or to
 - negotiate the nominal concept (e.g. `AgeInSeconds`) via shared dependencies.
 
 For example, the following function has type-level guarantees that the three `number` literals passed as arguments represent compatible concepts for calculating linear expansion. (Note that `coefficient` uses non-CLDR units. A useful library would likely expose a union of materials with known coefficients instead.)
