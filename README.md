@@ -3,14 +3,14 @@
 
 ## Summary
 
-TypeScript is based on [structural subtyping][type-compatibility]. [Nominal types][nominal-typing] are useful for expressing concepts. Prefer composition over inheritance. *Therefore...* Compose tags by constraint.
+TypeScript is based on [structural subtyping][type-compatibility], but [nominal types][nominal-typing] are useful for expressing distinct concepts. Composing interfaces is a proven strategy. *Therefore...* Compose tags by constraint instead of defining a single tag per nominal concept.
 
 ```ts
 type Temperature = number & Unit<'celsius'>
 type Age = number & Integer & Nonnegative & Unit<'year'>
 ```
 
-Compatibility between contexts doesn't require negotiating the concepts (`Temperature` and `Age`), but only their constraints (`Integer`, `Nonnegative`, `Unit`). If we establish conventions for the constraints, there is no need to import anything.
+Compatibility between contexts doesn't require negotiating the concepts (`Temperature` and `Age`), but only their constraints (`Integer`, `Nonnegative`, `Unit`). If we establish conventions for constraints, there is no need to import anything.
 
 ```ts
 // Constraints on the `number` literal type
@@ -58,7 +58,7 @@ It's necessary to parse input at the system boundary (e.g. public API). The boun
 
 ### Accepting a constrained literal as input
 
-The advantage of constraints as types comes when defining context-independent functions. **Making constraints explicit on the type-level** avoids a situation where you have to choose to either...
+The advantage of constraints as types is evident when defining context-independent functions. **Making constraints explicit on the type-level** avoids a situation where you have to choose to either...
 
 - support the base literal (e.g. `number`) via defensive programming, or to
 - negotiate the nominal concept (e.g. `AgeInSeconds`) via shared dependencies.
