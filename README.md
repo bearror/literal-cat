@@ -75,8 +75,8 @@ function calculateLinearExpansion<Length extends number>(
 }
 ```
 
-> **Note**
-> Checking bounds or units after every single step is often unproductive. As a rule of thumb, construct local concepts once at the system boundary. This provides an unambiguous starting point for any further processing. There's diminishing returs for — say — ensuring that a `number` is `Positive` after every subtraction. Focus on enforcing only the constraints that are necessary.
+> **Warning**
+> Checking constraints after every single step is often unproductive. As a rule of thumb, aim to construct concepts once at the system boundary. This provides an unambiguous starting point for processing. There's diminishing returs for — say — ensuring that a `number` is `Positive` after every subtraction. However, **it's vital that the defined constraints are actually conformed to**. The whole approach falls apart if you can't trust the types. Focus on defining and enforcing only the constraints that are necessary.
 
 [type-compatibility]: https://www.typescriptlang.org/docs/handbook/type-compatibility.html
 [nominal-typing]: https://basarat.gitbook.io/typescript/main-1/nominaltyping
