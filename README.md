@@ -4,7 +4,7 @@
 > **Note**
 > This is still an untested idea. I'm not sure if it's actually useful yet. Might be simply something that gets in the way, or is made irrelevant by more granular number types and first-class support for units of measure. I'll try this out in my own projects to see if it improves compatibility.
 
-## Summary
+## Overview
 
 TypeScript is based on [structural subtyping][type-compatibility], but [nominal types][nominal-typing] are useful for expressing distinct concepts. Composing interfaces is a proven strategy. *Therefore...* Make use of structural subtyping by **composing tags by constraint instead of defining a single nominal tag per concept**.
 
