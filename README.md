@@ -34,7 +34,7 @@ Generally, **concepts are context-specific** — **constraints are universal**.
 
 ### Constructing a constrained literal
 
-It's necessary to parse input at the system boundary (e.g. public API). The boundary is a great place for introducing constructors for your local concepts. What matters is ending up with *the proper type signature with the least overhead*.
+It's necessary to parse input at the system boundary (e.g. public API). The boundary is a sensible place for introducing constructors for your local concepts. How exactly you implement this is a separate concern. For the purposes of constraints as types, what matters is ending up with *the proper type signature with the least overhead*.
 
 - Given a concept...
     ```ts
