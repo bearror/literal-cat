@@ -61,7 +61,7 @@ It's necessary to parse input at the system boundary (e.g. public API). The boun
 
 ### Accepting a constrained literal as input
 
-Constraints as types aims to make it easier to define functions that are compatible with concepts from external contexts. Making constraints explicit on the type-level *avoids* a situation where you have to choose to either...
+Constraints as types aims to make it easier to define functions that are compatible with concepts from external contexts. (My `Temperature` may be different than your `Temperature`.) Making constraints explicit on the type-level *avoids* a situation where you have to choose to either...
 
 - fall back to the base literal (e.g. `number`) via defensive programming, or to
 - negotiate the nominal concept (e.g. `AgeInSeconds`) via shared dependencies.
