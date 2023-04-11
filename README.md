@@ -31,7 +31,7 @@ Generally, **concepts are context-specific** — **constraints are universal**. 
 
 ### Constructing a constrained literal
 
-It's necessary to parse input at the system boundary (e.g. public API). The boundary is a great place for introducing constructors for your local *concepts*. While it is possible to create composable constructors for each *constraint*, that's likely unnecessarily complex. The goal is simply to **attach the constraints that your concept conforms to as type-level tags**.
+It's necessary to parse input at the system boundary (e.g. public API). The boundary is a great place for introducing constructors for your local *concepts*. While it is possible to create composable constructors for each *constraint*, that's likely unnecessarily complex. The goal is to **attach the constraints that your concept conforms to as type-level tags**.
 
 - Given a concept...
     ```ts
