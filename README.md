@@ -30,7 +30,7 @@ Generally, **concepts are context-specific** — **constraints are universal**.
 ## Example usage
 
 > **Note**
-> This repository isn't a library. I'm advocating for the *idea* of literal constraints as types. Optimally, the approach introduces no dependencies and low overhead.
+> This repository isn't a library. I'm exploring the *idea* of literal constraints as types. Optimally, the approach introduces no dependencies and low overhead.
 
 ### Constructing a constrained literal
 
