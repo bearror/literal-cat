@@ -34,7 +34,7 @@ Generally, **concepts are context-specific** — **constraints are universal**.
 
 ### Constructing a constrained literal
 
-It's necessary to parse input at the system boundary (e.g. public API). The boundary is a great place for introducing constructors for your local *concepts*. While it is possible to create composable constructors for each *constraint*, that's likely unnecessarily complex. The goal is to **attach the constraints that your concept conforms to as type-level tags**.
+It's necessary to parse input at the system boundary (e.g. public API). The boundary is a great place for introducing constructors for your local concepts. The goal is to **attach the constraints that your concept conforms to as type-level tags**.
 
 - Given a concept...
     ```ts
@@ -57,7 +57,7 @@ It's necessary to parse input at the system boundary (e.g. public API). The boun
       // throw Error, return Error, return undefined, use Result type, ...
     }
     ```
-  - If you're using a parsing library like [Zod][zod], it should be possible to attach tags to a schema. In Zod, one approach is using `refine`. (No need to have a type guard with extraneous checks, though!) Note that the built-in `brand` method uses a `Symbol`, which complicates compatibility. It aims to brand *concepts*, not *constraints*. (That's not necessarily a bad thing! Nominal types and literal constraints as types are different approaches.)
+  - If you're using a parsing library like [Zod][zod], it should be possible to attach tags to a schema. In Zod, one approach is using `refine`. (No need to have a type guard with extraneous checks, though!)
 
 ### Accepting a constrained literal as input
 
