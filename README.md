@@ -25,7 +25,7 @@ type Unit<U extends Units> = { Unit: U } // e.g. some subset of CLDR units
 // ...
 ```
 
-Generally, **concepts are context-specific** — **constraints are universal**. Interfaces have proven useful for objects. Why not try a similar approach for literals?
+Generally, **concepts are context-specific** — **constraints are universal**.
 
 ## Example usage
 
